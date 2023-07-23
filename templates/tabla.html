@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<body>
+    {% block content %}
+    {% block nav %}
+    {% endblock %}
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+        {% for username,password in data %}
+        <tr>
+            <td>1</td>
+            <td>{{username}}</td>
+            <td>{{password}}</td>
+            <td><button>Edit</button><button>Delete</button></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+    {% endblock %}
+</body>
+</html>

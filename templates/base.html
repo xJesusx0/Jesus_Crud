@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud Jesus {% block titulo %}{% endblock %}</title>
+    {% block style %}
+    <!-- archivo de estilos-->
+    {% endblock %}
+</head>
+
+<body>
+    {% block nav %}
+    <nav>
+        <ol>
+            <li><a href="{{url_for('index3')}}"> Inicio</a></li>
+            <li><a href="{{url_for('admin')}}"> Admin</a></li>
+            <li><a href="{{url_for('tabla')}}">Tabla</a></li>
+        </ol>
+    </nav>
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

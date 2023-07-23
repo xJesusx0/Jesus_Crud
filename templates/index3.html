@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block titulo %} Registrarse {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static' , filename = 'CSS/style_index3.css')}}">
+{% endblock %}
+
+{%block content%}
+    <div id="menu">
+        <h2>Menú de Inicio</h2>
+        <form actions="" method ="post">
+
+            <h4>Usuario</h4>
+            <input type="text" id = "username" name = "username" placeholder ="Username">
+            <h4>Contraseña</h4>
+            <input type="password" id="password" name="password" placeholder="Password"><br><br>
+            <input type="submit" value="registrar" class="botones">
+
+        </form>
+
+        {% if error %}
+        <p style="color: brown;">{{error}}</p>
+        {%  else %}
+        <p style="color:green;">usuario registrado</p>
+        {% endif %}
+
+    </div>
+    {% include "tabla.html" %}
+{% endblock %}
+
+
