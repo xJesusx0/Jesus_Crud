@@ -1,22 +1,36 @@
 {% extends "base.html" %}
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static' , filename = 'CSS/style_tabla.css')}}">
+{% endblock %}
 <body>
     {% block content %}
     {% block nav %}
     {% endblock %}
-    <table>
-        <tr>
+    <table class = "tabla">
+        <tr class = "top">
             <th>Id</th>
             <th>Username</th>
             <th>Password</th>
             <th>Actions</th>
         </tr>
-        {% for username,password in data %}
-        <tr>
-            <td>1</td>
+        {% for id,username,password in data %}
+        {% if id % 2 == 0 %}
+        <tr class = "datos" id ="par">
+            <td>{{id}}</td>
             <td>{{username}}</td>
             <td>{{password}}</td>
-            <td><button>Edit</button><button>Delete</button></td>
+            <td><button class = "boton" id ="delete">Delete</button>
+                <button class = "boton" id ="edit">Edit</button></td>
         </tr>
+        {% else %}
+        <tr class = "datos" id ="impar">
+            <td>{{id}}</td>
+            <td>{{username}}</td>
+            <td>{{password}}</td>
+            <td><button class = "boton" id ="delete">Delete</button>
+                <button class = "boton" id ="edit">Edit</button></td>
+        </tr>
+        {% endif %}
         {% endfor %}
 
     </table>

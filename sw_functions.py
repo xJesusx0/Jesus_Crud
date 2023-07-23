@@ -120,14 +120,17 @@ def users_request():
           c = c+ 1
     return f_users
 
-def users_data():
+def process_data():
   users = users_request()
   usernames = []
   passwords = []
+  id = []
+  id_counter = 1
   for user in users:
         username,password = user.split(",")
         usernames.append(username)
         passwords.append(password)
-
-  data = list(zip(usernames,passwords))
+        id.append(id_counter)
+        id_counter = id_counter + 1
+  data = list(zip(id,usernames,passwords))
   return data

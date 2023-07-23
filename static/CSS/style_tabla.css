@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+    
+}
+.tabla {
+    border-collapse: collapse;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    font-size: 19px;
+    padding: 10px;
+  }
+  
+  .tabla th:not(:first-child),
+  .tabla td:not(:first-child) {
+    border-left: 1px solid #000;
+  }
+.top{
+    background-color: #000;
+    color: #fff;
+    border-bottom: 1px solid #000; 
+}
+
+#par{
+    background-color: rgb(226, 225, 225);
+}
+.boton {
+    width: 35%;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#delete{
+    background-color: rgb(218, 7, 7);
+}
+#edit{
+    background-color: #5DA9E9;
+}
+#delete:hover{
+    background-color: rgb(168, 5, 5);
+    color:white
+}
+#edit:hover{
+    background-color: #4d9ada;
+    color:white
+}

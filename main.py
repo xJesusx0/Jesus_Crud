@@ -5,8 +5,7 @@ app = flask.Flask(__name__)
 
 @app.route("/", methods = ["GET","POST"])
 def index3():
-    data = sw.users_data()
-    users = sw.users_request()
+    data = sw.process_data()
     if flask.request.method  == "POST":
 
         usuario = flask.request.form["username"]
@@ -17,7 +16,7 @@ def index3():
         if user_request == True:
             error = "ese usuario ya esta ocupado"
 
-            return flask.render_template("index3.html",users = users,error = error)
+            return flask.render_template("index3.html",error = error,data=data)
 
         elif user_request == False: 
 
@@ -25,10 +24,9 @@ def index3():
                 sw.registrar(usuario, contraseña)
             
     sw.delete_c()
-    users = sw.users_request()
-  
-    data = sw.users_data()
-    return flask.render_template("index3.html",users = users,data = data)
+
+    data = sw.process_data()
+    return flask.render_template("index3.html",data = data)
 
 @app.route("/admin")
 def admin():
