@@ -69,8 +69,7 @@ def delete(line):
     with open('database.csv', 'r') as file:
         lines = file.readlines()
 
-    lines[line - 1] = "" + "\n" 
-
+    lines[line] = " \n"
     with open('database.csv', 'w') as file:
         file.writelines(lines)
     delete_c()
@@ -134,3 +133,16 @@ def process_data():
         id_counter = id_counter + 1
   data = list(zip(id,usernames,passwords))
   return data
+
+def new_delete(id):
+  data = users_request()
+  new_file = ["username,password\n"]
+  counter = 1
+  for i in data:
+    if id != counter:
+        new_file.append(i)
+    counter = counter + 1
+
+  with open('database.csv', 'w') as file:
+        file.writelines(new_file)
+  delete_c()

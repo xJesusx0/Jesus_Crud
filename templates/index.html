@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block titulo %} index {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static' , filename = 'CSS/style_index.css')}}">
+{% endblock %}
+
+{%block content%}
+    <h1>Lista de usuarios</h1>
+    <div id="contenedor">
+        <a href="{{url_for('register')}}"><button class ="botones" id="register">Register</button></a>
+        <a href="{{url_for('register')}}"><button class ="botones" id="edit">Edit</button></a>
+        <a href="{{url_for('eliminar')}}"><button class ="botones" id="delete">Delete</button></a>
+
+    </div><br><br>
+    {% include "tabla.html" %}
+{% endblock %}

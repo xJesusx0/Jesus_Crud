@@ -12,8 +12,7 @@ body {
     border-radius: 5px;
     color: #003F91;
 }
-#menu input[type="text"],
-#menu input[type="password"] {
+#menu input[type="text"] {
     width: 100%;
     margin-bottom: 10px;
     padding: 5px;
@@ -25,13 +24,13 @@ body {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #5DA9E9;
-    color: #000000;
+    background-color: #E03C32;
+    color:black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 .botones:hover {
-    background-color: #003F91;
+    background-color: #b60f0f;
     color:#FFFFFF;
 }

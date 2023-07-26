@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block titulo %} Registrarse {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static' , filename = 'CSS/style_delete.css')}}">
+{% endblock %}
+
+{%block content%}
+    <div id="menu">
+        <h2>Eliminar</h2>
+        <form actions="" method ="post">
+            <h4>Id que deseea eliminar</h4>
+            <input type="text" id = "id" name = "id" placeholder ="Ingrese el id"><br><br>
+            <input type="submit" value="Delete" class="botones">
+
+        </form>
+
+    </div><br><br>
+    {% include "tabla.html" %}
+{% endblock %}
+
+

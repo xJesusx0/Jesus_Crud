@@ -2,9 +2,14 @@ import flask as flask
 import sw_functions as sw
 app = flask.Flask(__name__)
 
+@app.route("/")
+def index():
 
-@app.route("/", methods = ["GET","POST"])
-def index3():
+    data = sw.process_data()
+    return flask.render_template("index.html",data = data)
+
+@app.route("/registrar", methods = ["GET","POST"])
+def register():
     data = sw.process_data()
     if flask.request.method  == "POST":
 
@@ -28,25 +33,26 @@ def index3():
     data = sw.process_data()
     return flask.render_template("index3.html",data = data)
 
-@app.route("/admin")
-def admin():
-    users = sw.users_request()
-    usernames = []
-    passwords = []
-    for user in users:
-        username,password = user.split(",")
-        usernames.append(username)
-        passwords.append(password)
-    return flask.render_template("admin.html",
-                                 users = users,
-                                 usernames = usernames,
-                                 passwords = passwords)
 
-@app.route("/index", methods = ["GET","POST"])
+@app.route("/tabla", methods = ["GET","POST"])
 def tabla():
-    data = sw.users_data()
+    data = sw.process_data()
     return flask.render_template("tabla.html",
                                  data = data)
 
+@app.route("/eliminar", methods=["GET","POST"])
+def eliminar():
+    data = sw.process_data()
+    
+    if flask.request.method == "POST":
+        try:
+            id = flask.request.form["id"]
+            converted_id = int(id)
+            sw.new_delete(converted_id)
+        except ValueError:
+            return flask.render_template("delete.html",data=data)
+
+    data = sw.process_data()
+    return flask.render_template("delete.html",data=data)
+
 app.run(debug = True,port=4000) 
-#prueba

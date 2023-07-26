@@ -11,7 +11,6 @@
             <th>Id</th>
             <th>Username</th>
             <th>Password</th>
-            <th>Actions</th>
         </tr>
         {% for id,username,password in data %}
         {% if id % 2 == 0 %}
@@ -19,16 +18,12 @@
             <td>{{id}}</td>
             <td>{{username}}</td>
             <td>{{password}}</td>
-            <td><button class = "boton" id ="delete">Delete</button>
-                <button class = "boton" id ="edit">Edit</button></td>
         </tr>
         {% else %}
         <tr class = "datos" id ="impar">
             <td>{{id}}</td>
             <td>{{username}}</td>
-            <td>{{password}}</td>
-            <td><button class = "boton" id ="delete">Delete</button>
-                <button class = "boton" id ="edit">Edit</button></td>
+            <td>{{password}}</td> 
         </tr>
         {% endif %}
         {% endfor %}
