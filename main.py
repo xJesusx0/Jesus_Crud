@@ -1,5 +1,5 @@
 import flask as flask
-import sw_functions as sw
+import my_functions as sw
 app = flask.Flask(__name__)
 
 @app.route("/")
