@@ -12,12 +12,7 @@
 <body>
     {% block nav %}
     <nav>
-        <ol>
-            <li><a href="{{url_for('register')}}"> registrar</a></li>
-            <li><a href="{{url_for('tabla')}}">Tabla</a></li>
-            <li><a href="{{url_for('index')}}">index</a></li>
-            <li><a href="{{url_for('eliminar')}}">eliminar</a></li>
-        </ol>
+        <a href="{{url_for('register')}}"> <img width="30px" height="30px" src="https://www.freeiconspng.com/uploads/reload-icon-3.png"></a>  
     </nav>
     {% endblock %}
     {% block content %}

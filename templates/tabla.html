@@ -6,11 +6,14 @@
     {% block content %}
     {% block nav %}
     {% endblock %}
+
     <table class = "tabla">
         <tr class = "top">
             <th>Id</th>
             <th>Username</th>
             <th>Password</th>
+            <th>Delete</th>
+            <th>Edit</th>
         </tr>
         {% for id,username,password in data %}
         {% if id % 2 == 0 %}
@@ -18,12 +21,18 @@
             <td>{{id}}</td>
             <td>{{username}}</td>
             <td>{{password}}</td>
+            <td><a href="eliminar/{{id}}"><button id ="deleted">Delete</button></a></td>
+            <td><a href="#"><button id ="edit">Edit</button></a></td>
+
         </tr>
         {% else %}
         <tr class = "datos" id ="impar">
             <td>{{id}}</td>
             <td>{{username}}</td>
-            <td>{{password}}</td> 
+            <td>{{password}}</td>
+            <td><a href="eliminar/{{id}}"><button id="deleted">Delete</button></a></td> 
+            <td><a href="#"><button id ="edit">Edit</button></a></td>
+        
         </tr>
         {% endif %}
         {% endfor %}

@@ -6,7 +6,7 @@ body {
 .tabla {
     border-collapse: collapse;
     text-align: center;
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
     font-size: 19px;
     padding: 20px;
@@ -26,4 +26,34 @@ tr{
 }
 #par{
     background-color: rgb(226, 225, 225);
+}
+#deleted{
+    background-color: #E03C32;
+    color:black;
+    border:none;
+    border-radius: 10px;
+    font-size: 19px;
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+#deleted:hover {
+    background-color: #b60f0f;
+    color:#FFFFFF;
+}
+#edit{
+    background-color: #1091e7;
+    color:black;
+    border:none;
+    border-radius: 10px;
+    font-size: 19px;
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+#edit:hover {
+    background-color: #0f33b6;
+    color:#FFFFFF;
 }
