@@ -25,8 +25,7 @@ def testpass(passw):
   with open('database.csv',newline = '') as file:
      reader = csv.DictReader(file)
 
-     for row in reader:
-      
+     for row in reader:   
       if row['password'] == passw:
         isre = True
         break
@@ -101,3 +100,23 @@ def new_delete(id):
   with open('database.csv', 'w') as file:
         file.writelines(new_file)
   delete_c()
+
+def edit(id,new_u,new_p):
+  data = users_request()
+  new_file = ["username,password\n"]
+  editted = f"{new_u},{new_p}\n"
+  counter = 1
+  for i in data:
+    if id != counter:
+        new_file.append(i)
+    else:
+        new_file.append(editted)
+    counter = counter + 1
+  with open('database.csv', 'w') as file:
+        file.writelines(new_file)
+
+def check_Pass(password):
+   if len(password) < 8:
+      return False
+   else:
+      return True

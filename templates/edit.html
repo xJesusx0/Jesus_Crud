@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %} Index {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static' , filename = 'CSS/style_index3.css')}}">
+{% endblock %}
+
+{% block nav %}
+<a href="{{url_for('register')}}"> <img width="30px" height="30px" src="https://th.bing.com/th/id/OIP.2RoU9iEnuWdyatfeempqWwHaHa?pid=ImgDet&rs=1"></a>  
+{% endblock %}
+
+{% block content %}
+<div id="menu">
+    <h2>Editar</h2>
+    <form actions="" method ="post">
+
+        <h4>Usuario</h4>
+        <input value="{{o_username}}"type="text" id = "username" name = "username" placeholder ="Username">
+        <h4>Contraseña</h4>
+        <input value ="{{o_password}}"
+        type="password" id="password" name="password" placeholder="Password"><br><br>
+        <input type="submit" value="guardar" class="botones">
+
+    </form>
+    {% if error %}
+    <p style="color: brown;">{{error}}</p>
+    {% endif %}
+</div><br><br>
+    {% include "tabla.html" %}
+{% endblock %}

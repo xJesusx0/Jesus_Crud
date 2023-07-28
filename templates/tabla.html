@@ -22,7 +22,7 @@
             <td>{{username}}</td>
             <td>{{password}}</td>
             <td><a href="eliminar/{{id}}"><button id ="deleted">Delete</button></a></td>
-            <td><a href="#"><button id ="edit">Edit</button></a></td>
+            <td><a href="editar/{{id}}/{{username}}/{{password}}"><button id ="edit">Edit</button></a></td>
 
         </tr>
         {% else %}
@@ -31,7 +31,7 @@
             <td>{{username}}</td>
             <td>{{password}}</td>
             <td><a href="eliminar/{{id}}"><button id="deleted">Delete</button></a></td> 
-            <td><a href="#"><button id ="edit">Edit</button></a></td>
+            <td><a href="editar/{{id}}/{{username}}/{{password}}"><button id ="edit">Edit</button></a></td>
         
         </tr>
         {% endif %}

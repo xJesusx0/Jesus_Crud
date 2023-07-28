@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 
-{% block titulo %} Registrarse {% endblock %}
+{% block titulo %} Index {% endblock %}
 
 {% block style %}
 <link rel="stylesheet" href="{{ url_for('static' , filename = 'CSS/style_index3.css')}}">
+{% endblock %}
+
+{% block nav %}
+<a href="{{url_for('register')}}"> <img width="30px" height="30px" src="https://www.freeiconspng.com/uploads/reload-icon-3.png"></a>  
 {% endblock %}
 
 {%block content%}
@@ -21,8 +25,6 @@
 
         {% if error %}
         <p style="color: brown;">{{error}}</p>
-        {%  else %}
-        <p style="color:green;"></p>
         {% endif %}
 
     </div><br><br>
